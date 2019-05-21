@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Main
-comment0.text=\n\ Write\ a\ description\ of\ class\ Main\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ This\ program\ generate\ a\ random\ integer\ and\ let\ user\ guess\ it.\n\ After\ the\ user\ guessed\ the\ correct\ number,\ it\ will\ print\ the\n\ number\ of\ time\ the\ user\ guessed.\n\ @author\ Joanna\ Hsiao\n\ @version\ 1.0\n
 comment1.params=
 comment1.target=Main()
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Main\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\n
+comment2.params=
+comment2.target=int\ getRandomNum()
+comment2.text=\n\ This\ method\ create\ a\ random\ number\ generator\ and\ return\ a\ random\ \n\ number\ within\ range\n\n\ @return\ \ \ \ a\ random\ number\ within\ range\n
 numComments=3

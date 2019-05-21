@@ -1,33 +1,60 @@
-
+import java.util.Random;
+import java.util.Scanner;
 /**
- * Write a description of class Main here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This program generate a random integer and let user guess it.
+ * After the user guessed the correct number, it will print the
+ * number of time the user guessed.
+ * @author Joanna Hsiao
+ * @version 1.0
  */
 public class Main
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private final int RANGE = 100;
 
     /**
      * Constructor for objects of class Main
      */
     public Main()
     {
-        // initialise instance variables
-        x = 0;
+        System.out.print('\u000C'); // clean screen   
+
+        int answer = getRandomNum();
+        int currentAttempt = 0;
+        int userTries = 0;
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Guess a number! Choose from 1 to 100.");
+        while (currentAttempt != answer)
+        {
+           currentAttempt = input.nextInt();
+           if (currentAttempt > 100 || currentAttempt < 1)
+            System.out.println("Choose from 1 to 100.");
+           else
+           {
+               userTries++;
+               if(currentAttempt < answer)
+                System.out.println("Too small!");
+               else if(currentAttempt > answer)
+                System.out.println("Too large!");
+           }
+        }
+
+        System.out.println("Congrats! You guessed right!");
+        System.out.println("It took you " + userTries + " time.");
+        
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * This method create a random number generator and return a random 
+     * number within range
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return    a random number within range
      */
-    public int sampleMethod(int y)
+    private int getRandomNum()
     {
-        // put your code here
-        return x + y;
+        Random randGenerator = new Random();
+        return randGenerator.nextInt(RANGE);
     }
 }
