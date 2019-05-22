@@ -17,18 +17,22 @@ public class Main
      */
     public Main()
     {
-        System.out.print('\u000C'); // clean screen   
-
         int answer = getRandomNum();
         int currentAttempt = 0;
+    int lastAttempt = 0;
         int userTries = 0;
-        
         Scanner input = new Scanner(System.in);
         
         System.out.println("Guess a number! Choose from 1 to 100.");
         while (currentAttempt != answer)
         {
            currentAttempt = input.nextInt();
+	   if (lastAttempt == currentAttempt)
+	   {
+		System.out.println("You just guessed that number! Try again.");
+		continue;
+	   }
+	   
            if (currentAttempt > 100 || currentAttempt < 1)
             System.out.println("Choose from 1 to 100.");
            else
@@ -39,6 +43,8 @@ public class Main
                else if(currentAttempt > answer)
                 System.out.println("Too large!");
            }
+           
+           lastAttempt = currentAttempt;
         }
 
         System.out.println("Congrats! You guessed right!");
